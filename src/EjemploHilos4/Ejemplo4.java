@@ -5,7 +5,7 @@ public class Ejemplo4 {
 		Thread hilo = new Thread("cuenta atras") {
 			@Override
 			public void run(){
-				for(int i=5;i>=0;i--) {
+				for(int i=5;i>=0;i--) { // como es una cuanta atras el for es al reves
 					System.out.println(i);
 					try {
 						Thread.sleep(1000);
