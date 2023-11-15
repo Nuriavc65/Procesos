@@ -12,7 +12,7 @@ public class ejercicio5 {
 			System.out.println("parametros erroneos");
 			System.exit(-1);
 		}
-		File[]directorio = new File(args[0]).listFiles();
+		File[]directorio = new File(args[0]).listFiles(); //
 		List<File> lista = List.of(directorio)
 				.stream()
 				.filter(file -> file.isFile())

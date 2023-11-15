@@ -49,7 +49,7 @@ public class Ejercicio5 {
 					String linea = contenido.nextLine();
 					nLineas++;
 					nCaracteres = nCaracteres + linea.length();
-					nPalabras += linea.split("\\W+").length;
+					nPalabras += linea.split("\\W+").length; 
 				}
 				System.out.printf("numeroLinas:%d numeroCaracteres:%d numeroPalabras:%d \n",nLineas,nCaracteres,nPalabras );
 				nLineas = nPalabras = nCaracteres = 0; 
