@@ -33,7 +33,8 @@ class Almacen {
 				wait(); //el hilo espera a que exista un producto en el almacen 
 			}catch (Exception e) {}
 		}
-		String producto = productos[--almacenados]; // se retira un producto por lo que el numero de productos almacenados se resta
+		almacenados--;
+		String producto = productos[almacenados]; // se retira un producto por lo que el numero de productos almacenados se resta
 		notify(); //se notifica al resto de  hilos que se ha retirado productos 
 		return producto;
 	}
