@@ -13,7 +13,7 @@ package Repaso;
 	}
 	public static void main(String[] args) throws InterruptedException {
 		Thread hilo1 = new Thread(Main :: run);
-		Thread hilo2 = new Thread(Main :: run); // creamos el hilo y le damos al hilo su funcion Main::run
+		Thread hilo2 = new Thread(Main :: run); // creamos el hilo y le damos la referencia de la funcion run de Main == runable
 		hilo1.start();	//el hilo comienza a hacer su funcion
 		hilo2.start();	
 		hilo1.join();	//una vez cumlida su tarea el hilo vuele a la linea temporal del main
@@ -27,7 +27,7 @@ package Repaso;
 		 public Contador(int numero){
 			this.numero = numero;
 		}
-		 public synchronized void incrementar() { //le ponemsp sycronized para que los hilos funcionen y hagn sus tarea en un orden concreto
+		 public synchronized void incrementar() { //le ponemsp sycronized para que los hilos funcionen y hagn sus tarea en un orden concret
 			 numero++;
 		 }
 		 public int get() {

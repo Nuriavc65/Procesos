@@ -14,13 +14,13 @@ public class Ejercicio5 {
 	
 	
 	public static void main(String[] args) throws IOException {
-		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in)); //para leer la consola
 		System.out.println("Iinserte ruta del fichero que quiera analizar");
-		String ruta = in.readLine();
-		File directorio = new File(ruta);
+		String ruta = in.readLine(); //ruta que le pasamos por consola 
+		File directorio = new File(ruta); //creamos un fhicero con la ruta
 		System.out.println("inserte indicador: ");
-		String indicador = in.readLine();
-		switch (indicador) {
+		String indicador = in.readLine(); //indicador que pasamos por consola
+		switch (indicador) { // tareas que realiza el programa en funcion del indicador
 			case "C": 
 				funcionC(directorio);
 				break;
@@ -41,14 +41,15 @@ public class Ejercicio5 {
 		int nLineas = 0;
 		int nPalabras = 0;
 		int nCaracteres = 0;
-		int numeroArchivos = directorio.listFiles().length;
+		int numeroArchivos = directorio.listFiles().length; // se calcula el numero de archivos de la carpeta 
 		try {
-			for(int i=0;i<numeroArchivos;i++) {
+			for(int i=0;i<numeroArchivos;i++) { // se recorren los archivos uno a uno 
+				//leemos el fichero de la carpeta   
 				Scanner contenido = new Scanner (new File(directorio.getAbsolutePath()+'\\'+directorio.listFiles()[i].getName()));
 				while(contenido.hasNextLine()) {
-					String linea = contenido.nextLine();
+					String linea = contenido.nextLine(); //almacenamos linea cada vez que el fichero lea una  linea
 					nLineas++;
-					nCaracteres = nCaracteres + linea.length();
+					nCaracteres = nCaracteres + linea.length(); // los caxteres son la longitud de la linea 
 					nPalabras += linea.split("\\W+").length; 
 				}
 				System.out.printf("numeroLinas:%d numeroCaracteres:%d numeroPalabras:%d \n",nLineas,nCaracteres,nPalabras );
