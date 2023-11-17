@@ -5,7 +5,6 @@ import java.util.concurrent.Semaphore;
 
 public class Semaforos {
 	public static void main(String[] args) {
-		
 		Parque parque = new Parque(4, 20);
 		
 	}
@@ -24,11 +23,14 @@ class Parque{
 		}
 	}
 	public void sentarse() throws InterruptedException {
-		banco.acquire();
-		System.out.println("se ha sentado"+Thread.currentThread().getName());
-		Thread.sleep(tiempoEspera.nextInt(3000-1000)+1000);
-		System.out.println("se levanta" +Thread.currentThread().getName());
-		banco.release();
+		if(banco.tryAcquire()== true) {
+			System.out.println("se ha sentado"+Thread.currentThread().getName());
+			Thread.sleep(tiempoEspera.nextInt(3000-1000)+1000);
+			System.out.println("se levanta" +Thread.currentThread().getName());
+			banco.release();
+		}else {
+			System.out.println("no se ha podido sentar" +Thread.currentThread().getName());
+		}
 	}
 }
 
@@ -43,12 +45,15 @@ class PersonaParque extends Thread{
 	}
 	@Override
 	public void run() {
-		try {
-			System.out.println("esta paseando" +Thread.currentThread().getName());
-			Thread.sleep(tiempo.nextInt(3000-1000)+1000);
-			parque.sentarse();
-		} catch (InterruptedException e) {			
-			e.printStackTrace();
+		while(true) {
+			try {
+				System.out.println("esta paseando" +Thread.currentThread().getName());
+				Thread.sleep(tiempo.nextInt(3000-1000)+1000);
+				parque.sentarse();
+				
+			} catch (InterruptedException e) {			
+				e.printStackTrace();
+			}
 		}
 	}
 }
