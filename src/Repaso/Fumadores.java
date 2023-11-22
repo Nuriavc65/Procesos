@@ -68,8 +68,8 @@ class Mesa{
 	Mesa(){
 	}
 	public boolean comprobar (String ingrediente) {
-		System.out.println("aaaaaaa" + ingrediente);
-		System.out.println("bbbbbbb" + ingrediente1 + ingrediente2);
+		//System.out.println("aaaaaaa" + ingrediente);
+		//System.out.println("bbbbbbb" + ingrediente1 + ingrediente2);
 		if(!ingrediente.equals(ingrediente1) && !ingrediente.equals(ingrediente2)) {
 			return true;
 		}
