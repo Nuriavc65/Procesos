@@ -65,12 +65,12 @@ class Mesa{
 	private String ingrediente1;
 	private String ingrediente2;
 	
-	Mesa(){
-	}
-	public boolean comprobar (String ingrediente) {
+	Mesa(){}
+	
+	public synchronized boolean comprobar (String ingrediente) {
 		//System.out.println("aaaaaaa" + ingrediente);
 		//System.out.println("bbbbbbb" + ingrediente1 + ingrediente2);
-		if(!ingrediente.equals(ingrediente1) && !ingrediente.equals(ingrediente2)) {
+		if(!ingrediente.equals(ingrediente1) && !ingrediente.equals(ingrediente2)){
 			return true;
 		}
 		return false;
@@ -84,10 +84,10 @@ class Mesa{
 			}
 			
 		}
-		System.out.println("ingredientes: " + ingrediente1 + ingrediente2 );
+		System.out.println("ingredientes: " + ingrediente1 +" "+ ingrediente2 );
 		ingrediente1 = null;
 		ingrediente2 = null;
-		notify();
+		notifyAll();
 	}
 	public synchronized void colocar (String ingredienteU , String ingredienteP) {
 		if(ingrediente1 != null && ingrediente2 != null) {
@@ -99,7 +99,7 @@ class Mesa{
 		}
 		ingrediente1 = ingredienteU;
 		ingrediente2 = ingredienteP;
-		notify();
+		notifyAll();
 	}
 	
 	
