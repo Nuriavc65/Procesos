@@ -24,7 +24,6 @@ class RobotC extends Thread{
 	protected Cadena cadena;
 	protected Random random = new Random(); 
 	
-	
 	RobotC(Cadena cadena){
 		this.cadena = cadena;
 	}
@@ -88,7 +87,6 @@ class RobotE extends Thread{
 	public void run() {
 		while (true) {
 			cadena.Empaquetar(tipo);
-
 		}
 	}
 }
