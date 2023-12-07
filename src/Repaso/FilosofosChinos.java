@@ -18,7 +18,4 @@ class Filosofo extends Thread{
 		this.palilloD = palilloD;
 	}
 }
-class Mesa {
-	
-}
 

@@ -79,7 +79,7 @@ class Mesa{
 		if(ingrediente1 == null && ingrediente2 == null) {
 			try {
 				wait();
-			} catch (InterruptedException e) {
+			} catch (InterruptedException e){
 				e.printStackTrace();
 			}
 			

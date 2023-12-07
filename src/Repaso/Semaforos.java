@@ -33,12 +33,9 @@ class Parque{
 		}
 	}
 }
-
-
-
 class PersonaParque extends Thread{
 	private Parque parque;
-	private Random tiempo= new Random();
+	private Random tiempo = new Random();
 	
 	PersonaParque(Parque parque){
 		this.parque = parque;
