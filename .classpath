@@ -7,5 +7,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="Archivos"/>
+	<classpathentry kind="src" path="bytes"/>
+	<classpathentry kind="lib" path="lib/naipes.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

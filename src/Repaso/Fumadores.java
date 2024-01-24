@@ -44,7 +44,7 @@ class Agente extends Thread{
 	private String [] ingredientes = {"tabaco" ,"papel","cerillas"};
 	private Mesa mesa;
 	private Random random = new Random();
-	
+
 	Agente(Mesa mesa){
 		this.mesa = mesa;
 	}

@@ -15,7 +15,7 @@ package Repaso;
 		Thread hilo1 = new Thread(Main :: run);
 		Thread hilo2 = new Thread(Main :: run); // creamos el hilo y le damos la referencia de la funcion run de Main == runable
 		hilo1.start();	//el hilo comienza a hacer su funcion
-		hilo2.start();	
+		hilo2.start();
 		hilo1.join();	//una vez cumlida su tarea el hilo vuele a la linea temporal del main
 		hilo2.join();
 		System.out.println("Contador =" +contador.get()); //imprime el restultado del contador 

@@ -1,9 +1,7 @@
 package Repaso;
 
 public class Ejemplo5 extends Thread{
-	 static boolean finalizar = false;  
-	
-	
+	static boolean finalizar = false;  
 	
 	public void run() {
 		while (!finalizar) {
